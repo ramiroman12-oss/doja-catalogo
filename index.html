@@ -1,1 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo DOJA</title>
+    <!-- Incluimos Tailwind para que el diseño luzca bien -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <div id="root"></div>
+    
+    <!-- Corregido el import para asegurar la resolución del módulo -->
+    <script type="module">
+        import React from 'https://esm.sh/react';
+        import ReactDOM from 'https://esm.sh/react-dom/client';
+        import App from './App.jsx?dev'; 
 
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(App));
+    </script>
+</body>
+</html>
