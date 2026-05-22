@@ -3,80 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo DOJA - Ecosistema Completo</title>
+    <title>Ecosistema DOJA Completo</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://unpkg.com/lucide-react"></script>
 </head>
 <body class="bg-[#FFF6F7]">
     <div id="root"></div>
 
     <script type="text/babel">
-        const { useState, useMemo } = React;
-        const { ShoppingBag, Sparkles, Moon, Sun, Trash2, Package } = lucide;
+        const { useState } = React;
 
-        // Base de datos completa recuperada
-        const PRODUCTOS_DATA = [
-            { id: "jojo-diary-lip-gloss", nombre: "JOJO DIARY LIP GLOSS", precio: 4500, categoria: "MAQUILLAJE", fallback: "💄", descripcion: "Brillo labial ultra cristalino." },
-            { id: "gege-bear-lip-glaze-x3", nombre: "GEGE BEAR LIP GLAZE X3", precio: 12000, categoria: "MAQUILLAJE", fallback: "💋", descripcion: "Set de 3 brillos hidratantes." },
-            { id: "unas-press-on-coquette", nombre: "Uñas Press On Coquette Style", precio: 4500, categoria: "UÑAS PRESS ON", fallback: "🎀", descripcion: "Uñas reutilizables con diseño coquette." },
-            { id: "base-cushion-cream-skin-gege-bear", nombre: "Base cushion Cream skin Gege Bear", precio: 12000, categoria: "MAQUILLAJE", fallback: "✨", descripcion: "Efecto piel de porcelana." },
-            { id: "llavero-tanjiro", nombre: "Llavero Demon Slayer - Tanjiro", precio: 4000, categoria: "ACCESORIOS", fallback: "⚔️", descripcion: "Llavero de silicona alta calidad." }
+        const PRODUCTOS = [
+            { id: 1, nombre: "JOJO DIARY LIP GLOSS", precio: 4500, cat: "MAQUILLAJE", emoji: "💄" },
+            { id: 2, nombre: "GEGE BEAR LIP GLAZE X3", precio: 12000, cat: "MAQUILLAJE", emoji: "💋" },
+            { id: 3, nombre: "Uñas Press On Coquette", precio: 4500, cat: "UÑAS", emoji: "🎀" },
+            { id: 4, nombre: "Base Cushion Gege Bear", precio: 12000, cat: "MAQUILLAJE", emoji: "✨" },
+            { id: 5, nombre: "Llavero Tanjiro", precio: 4000, cat: "ACCESORIOS", emoji: "⚔️" }
         ];
 
         function App() {
             const [role, setRole] = useState('customer');
-            const [darkMode, setDarkMode] = useState(false);
             const [carrito, setCarrito] = useState([]);
 
-            const agregarAlCarrito = (prod) => {
-                setCarrito([...carrito, { ...prod, cant: 1 }]);
-            };
-
             return (
-                <div className={`min-h-screen ${darkMode ? 'bg-zinc-950 text-white' : 'bg-[#FFF6F7] text-[#5C1B26]'}`}>
-                    {/* Switch de Modo Admin/Cliente */}
-                    <div className="bg-[#5C1B26] text-white p-2 text-center text-xs font-bold">
-                        <button onClick={() => setRole(role === 'customer' ? 'admin' : 'customer')}>
-                            Modo actual: {role === 'customer' ? '📱 CLIENTE' : '💼 ADMINISTRADOR'} (Clic para cambiar)
-                        </button>
+                <div className="min-h-screen text-[#5C1B26]">
+                    {/* Barra de control */}
+                    <div className="bg-[#5C1B26] text-white p-2 text-center text-xs font-bold cursor-pointer" onClick={() => setRole(role === 'customer' ? 'admin' : 'customer')}>
+                        MODO: {role.toUpperCase()} (Click para cambiar rol)
                     </div>
 
-                    <header className="p-6 border-b border-[#FCD3D9] flex justify-between items-center bg-white/50 backdrop-blur">
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full bg-[#E58B9D] flex items-center justify-center text-white">
-                                <Sparkles size={20} />
+                    <header className="p-6 bg-white border-b border-[#FCD3D9] flex justify-between items-center">
+                        <h1 className="text-2xl font-black tracking-widest text-[#5C1B26]">DOJA</h1>
+                        {role === 'customer' && (
+                            <div className="bg-[#FFE3E7] px-4 py-2 rounded-full font-bold text-sm">
+                                Carrito: {carrito.length}
                             </div>
-                            <h1 className="text-2xl font-black tracking-widest">DOJA</h1>
-                        </div>
-                        <button onClick={() => setDarkMode(!darkMode)} className="p-2 bg-[#FFE3E7] rounded-full">
-                            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-                        </button>
+                        )}
                     </header>
 
-                    <main className="p-6 max-w-7xl mx-auto">
+                    <main className="p-6 max-w-5xl mx-auto">
                         {role === 'customer' ? (
-                            <>
-                                <h2 className="text-xl font-bold mb-6">Catálogo DOJA</h2>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                                    {PRODUCTOS_DATA.map(p => (
-                                        <div key={p.id} className="bg-white p-6 rounded-3xl border border-[#FCD3D9] shadow-md hover:shadow-lg transition">
-                                            <span className="text-5xl mb-4 block">{p.fallback}</span>
-                                            <h3 className="font-bold text-sm mb-1 text-[#7C3543]">{p.nombre}</h3>
-                                            <p className="text-xs text-stone-500 mb-3">{p.categoria}</p>
-                                            <p className="font-black text-lg text-[#E58B9D]">${p.precio.toLocaleString()}</p>
-                                            <button onClick={() => agregarAlCarrito(p)} className="mt-4 w-full bg-[#5C1B26] text-white py-2 rounded-xl text-xs font-bold">Agregar al carrito</button>
-                                        </div>
-                                    ))}
-                                </div>
-                            </>
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                {PRODUCTOS.map(p => (
+                                    <div key={p.id} className="bg-white p-4 rounded-2xl border border-[#FCD3D9] shadow-sm">
+                                        <div className="text-4xl mb-2">{p.emoji}</div>
+                                        <h3 className="font-bold text-xs">{p.nombre}</h3>
+                                        <p className="text-[#E58B9D] font-black my-2">${p.precio}</p>
+                                        <button 
+                                            onClick={() => setCarrito([...carrito, p])}
+                                            className="w-full bg-[#5C1B26] text-white py-1 rounded-lg text-[10px] font-bold"
+                                        >
+                                            AGREGAR
+                                        </button>
+                                    </div>
+                                ))}
+                            </div>
                         ) : (
-                            <div className="p-10 text-center bg-white rounded-3xl border border-[#7C3543]">
-                                <Package size={48} className="mx-auto mb-4 text-[#7C3543]" />
-                                <h2 className="text-2xl font-bold">Panel de Administrador</h2>
-                                <p>Control de inventario y pedidos restaurado.</p>
+                            <div className="bg-white p-10 rounded-3xl border border-[#7C3543] text-center">
+                                <h2 className="text-2xl font-black">PANEL DE ADMINISTRACIÓN</h2>
+                                <p className="mt-2">Sistema cargado: {PRODUCTOS.length} productos en inventario.</p>
+                                <div className="mt-6 p-4 bg-[#FFF0F2] rounded-xl text-sm">
+                                    Total de pedidos: 0 | Ventas hoy: $0
+                                </div>
                             </div>
                         )}
                     </main>
