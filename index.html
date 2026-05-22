@@ -3,39 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo DOJA</title>
+    <title>Catálogo DOJA - Tienda Oficial</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- React y Babel para interpretar JSX en el navegador -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide-react"></script>
 </head>
-<body>
+<body class="bg-[#FFF6F7]">
     <div id="root"></div>
 
     <script type="text/babel">
-        // --- AQUÍ VA TODO EL CÓDIGO DE TU APP.JSX ---
         const { useState, useMemo } = React;
+        const { ShoppingBag, Sparkles, Moon, Sun } = lucide;
+
+        // Base de datos completa
         const PRODUCTOS_DATA = [
-            { id: "jojo-diary-lip-gloss", nombre: "JOJO DIARY LIP GLOSS", precio: 4500, categoria: "MAQUILLAJE", fallback: "💄" },
-            { id: "gege-bear-lip-glaze-x3", nombre: "GEGE BEAR LIP GLAZE X3", precio: 12000, categoria: "MAQUILLAJE", fallback: "💋" },
-            { id: "unas-press-on-coquette", nombre: "Uñas Press On Coquette Style", precio: 4500, categoria: "UÑAS PRESS ON", fallback: "🎀" },
-            { id: "llavero-tanjiro", nombre: "Llavero Demon Slayer - Tanjiro", precio: 4000, categoria: "ACCESORIOS", fallback: "⚔️" }
+            { id: 1, nombre: "JOJO DIARY LIP GLOSS", precio: 4500, categoria: "MAQUILLAJE", emoji: "💄" },
+            { id: 2, nombre: "GEGE BEAR LIP GLAZE X3", precio: 12000, categoria: "MAQUILLAJE", emoji: "💋" },
+            { id: 3, nombre: "Uñas Press On Coquette", precio: 4500, categoria: "UÑAS PRESS ON", emoji: "🎀" },
+            { id: 4, nombre: "Llavero Tanjiro", precio: 4000, categoria: "ACCESORIOS", emoji: "⚔️" },
+            { id: 5, nombre: "Base cushion Cream skin", precio: 12000, categoria: "MAQUILLAJE", emoji: "✨" }
         ];
 
         function App() {
+            const [darkMode, setDarkMode] = useState(false);
+            
             return (
-                <div className="min-h-screen bg-[#FFF6F7] p-8">
-                    <h1 className="text-3xl font-black text-[#7C3543] mb-6 text-center">CATÁLOGO DOJA</h1>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {PRODUCTOS_DATA.map(p => (
-                            <div key={p.id} className="bg-white p-6 rounded-3xl border border-[#FCD3D9] shadow-lg text-center">
-                                <span className="text-5xl">{p.fallback}</span>
-                                <h2 className="font-bold mt-4 text-[#7C3543]">{p.nombre}</h2>
-                                <p className="text-sm text-stone-500">{p.categoria}</p>
-                                <p className="font-black text-xl mt-2">${p.precio}</p>
+                <div className={`min-h-screen transition-colors ${darkMode ? 'bg-zinc-900 text-white' : 'bg-[#FFF6F7] text-[#5C1B26]'}`}>
+                    <header className="p-6 border-b border-[#FCD3D9] flex justify-between items-center bg-white/50 backdrop-blur">
+                        <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-full bg-[#E58B9D] flex items-center justify-center text-white">
+                                <Sparkles size={20} />
                             </div>
-                        ))}
-                    </div>
+                            <h1 className="text-2xl font-black tracking-widest">DOJA</h1>
+                        </div>
+                        <button onClick={() => setDarkMode(!darkMode)} className="p-2 bg-[#FFE3E7] rounded-full">
+                            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+                        </button>
+                    </header>
+
+                    <main className="p-6 max-w-6xl mx-auto">
+                        <h2 className="text-xl font-bold mb-6">Catálogo Completo</h2>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                            {PRODUCTOS_DATA.map(p => (
+                                <div key={p.id} className="bg-white p-6 rounded-3xl border border-[#FCD3D9] shadow-md hover:shadow-xl transition flex flex-col items-center text-center">
+                                    <span className="text-6xl mb-4">{p.emoji}</span>
+                                    <h3 className="font-bold text-sm mb-1">{p.nombre}</h3>
+                                    <p className="text-[10px] bg-[#FFF0F2] px-2 py-1 rounded-full mb-3">{p.categoria}</p>
+                                    <p className="font-black text-lg text-[#E58B9D]">${p.precio.toLocaleString()}</p>
+                                    <button className="mt-4 w-full bg-[#5C1B26] text-white py-2 rounded-xl text-xs font-bold">Agregar al carrito</button>
+                                </div>
+                            ))}
+                        </div>
+                    </main>
                 </div>
             );
         }
