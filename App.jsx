@@ -22,7 +22,7 @@ import {
 
 // === BASE DE DATOS DE DOJA 100% DEPURADA Y SIN DUPLICADOS ===
 const PRODUCTOS_DATA = [
-  // --- CATEGORÍA: MAQUILLAJE -> SUB: GLOSS ---
+    // --- CATEGORÍA: MAQUILLAJE -> SUB: GLOSS ---
   { 
     id: "jojo-diary-lip-gloss", 
     nombre: "JOJO DIARY LIP GLOSS", 
@@ -33,7 +33,8 @@ const PRODUCTOS_DATA = [
     subcategoria: "GLOSS", 
     descripcion: "Brillo labial ultra cristalino con envase Jojo Diary. Labios carnosos, hidratados y con destellos de luz espectaculares.",
     destacado: true,
-    fallback: "💄"
+    fallback: "💄",
+    image: "https://i.postimg.cc/QMFf5Nx6/IMG-5938-scaled.jpg"
   },
   { 
     id: "gege-bear-lip-glaze-x3", 
@@ -45,7 +46,8 @@ const PRODUCTOS_DATA = [
     subcategoria: "GLOSS", 
     descripcion: "Set de 3 brillos labiales efecto glaze ultra hidratantes de Gege Bear. Variedad de tonos hermosos y coquetos en un solo pack.",
     destacado: true,
-    fallback: "💋"
+    fallback: "💋",
+    image: "https://i.postimg.cc/BvjmDZQN/IMG-4486.jpg"
   },
   { 
     id: "labial-largo-corazon-gege-bear", 
@@ -57,7 +59,8 @@ const PRODUCTOS_DATA = [
     subcategoria: "GLOSS", 
     descripcion: "Labial retráctil de larga duración con un delicado aplicador en forma de corazón largo de la marca Gege Bear.",
     destacado: false,
-    fallback: "💖"
+    fallback: "💖",
+    image: "https://i.postimg.cc/43YWt4Nv/0380b8ca-893d-464b-b196-d67f0e04d39c-0b85adbed93a79b24117373359269984-320-0.webp"
   },
   { 
     id: "gege-bear-labial-liq-osito-x3", 
@@ -69,7 +72,8 @@ const PRODUCTOS_DATA = [
     subcategoria: "GLOSS", 
     descripcion: "Set premium de 3 labiales líquidos de alta fijación con un tierno envase coleccionable en forma de Osito.",
     destacado: true,
-    fallback: "🧸"
+    fallback: "🧸",
+    image: "https://i.postimg.cc/5tXsv9Nn/IMG-5888-scaled.jpg"
   },
   { 
     id: "gege-bear-lip-glaze", 
@@ -81,7 +85,8 @@ const PRODUCTOS_DATA = [
     subcategoria: "GLOSS", 
     descripcion: "Brillo labial hidratante de efecto espejo de Gege Bear. Textura ligera, ultra brillante y no pegajosa.",
     destacado: false,
-    fallback: "🐰"
+    fallback: "🐰",
+    image: "https://i.postimg.cc/d0h5dQVM/Rojo-Crema-Moderno-Artesanal-Personalizado-Cuadrado-Sticker.png"
   },
   { 
     id: "labial-corazon-black-gege-bear", 
@@ -93,7 +98,8 @@ const PRODUCTOS_DATA = [
     subcategoria: "GLOSS", 
     descripcion: "Labial hidratante con forma de corazón black de la marca Gege Bear. Aporta un brillo espectacular y una hidratación duradera.",
     destacado: false,
-    fallback: "💄"
+    fallback: "💄",
+    image: "https://i.postimg.cc/0NzVm52C/9053e298-b73c-4bc8-9e3f-f53536463c2f-7238823cf1066f7be817373364165183-320-0.webp"
   },
   { 
     id: "labial-brillo-corazon-knight-gege-bear", 
@@ -105,7 +111,8 @@ const PRODUCTOS_DATA = [
     subcategoria: "GLOSS", 
     descripcion: "Brillo labial de edición especial Knight, con aplicador estilizado de corazón. Un brillo con reflejos holográficos únicos.",
     destacado: false,
-    fallback: "🌟"
+    fallback: "🌟",
+    image: "https://i.postimg.cc/fR2HJSZq/9dd4cf60-1f08-4240-89f3-4a59c4eaa396-20628dc4b829e2107917302647072613-320-0.webp"
   },
   { 
     id: "gege-bear-labial-gloss-2in1", 
@@ -117,7 +124,8 @@ const PRODUCTOS_DATA = [
     subcategoria: "GLOSS", 
     descripcion: "Un producto versátil de dos lados: labial mate súper pigmentado de un extremo, y un gloss de brillo radiante en el otro.",
     destacado: false,
-    fallback: "💋"
+    fallback: "💋",
+    image: "https://i.postimg.cc/fbV8XWTr/LABIAL-GLAIR-5-TONOS-GX1253.jpg"
   },
   { 
     id: "gege-bear-lip-glaze-conejo-negro", 
@@ -129,7 +137,8 @@ const PRODUCTOS_DATA = [
     subcategoria: "GLOSS", 
     descripcion: "Glaze labial altamente reflectante inspirado en la estética coquette del conejo negro. Brillo efecto agua.",
     destacado: false,
-    fallback: "🐰"
+    fallback: "🐰",
+    image: "https://i.postimg.cc/xdX6HjTx/IMG-8803-scaled.jpg"
   },
 
   // --- CATEGORÍA: MAQUILLAJE -> SUB: BASE CUSHION ---
@@ -143,7 +152,8 @@ const PRODUCTOS_DATA = [
     subcategoria: "BASE CUSHION", 
     descripcion: "Base cushion ultra fluida para un efecto piel de porcelana (Cream Skin). Excelente cobertura con textura ultra liviana.",
     destacado: true,
-    fallback: "✨"
+    fallback: "✨",
+    image: "https://i.postimg.cc/d0h5dQtB/a7f32927-5948-40e0-a6c0-234324a05dd6-f2a9784b00b3add3a017720246635667-320-0.webp"
   },
   { 
     id: "base-cushion-lucky-gege-bear", 
@@ -155,7 +165,8 @@ const PRODUCTOS_DATA = [
     subcategoria: "BASE CUSHION", 
     descripcion: "Edición Lucky de la base cushion de Gege Bear. Ideal para retoques rápidos con acabado mate aterciopelado.",
     destacado: false,
-    fallback: "⭐"
+    fallback: "⭐",
+    image: "https://i.postimg.cc/P536Pvh3/1b8d2b2b-5143-4827-acfc-7f42a6aa8b71-6f617e09ff8a634a3b17720244730536-320-0.webp"
   },
   { 
     id: "gege-bear-base-cushion-repuesto", 
@@ -167,7 +178,8 @@ const PRODUCTOS_DATA = [
     subcategoria: "BASE CUSHION", 
     descripcion: "Dúo pack que incluye la base cushion original y un cartucho de repuesto adicional para el doble de duración.",
     destacado: true,
-    fallback: "💖"
+    fallback: "💖",
+    image: "https://i.postimg.cc/jjDMNqdk/IMG-8810-scaled.jpg"
   },
 
   // --- CATEGORÍA: MAQUILLAJE -> SUB: PESTAÑAS ---
@@ -181,7 +193,8 @@ const PRODUCTOS_DATA = [
     subcategoria: "PESTAÑAS", 
     descripcion: "Pegamento de pestañas de alta resistencia de Gege Bear. Secado rápido, transparente y durabilidad de larga jornada.",
     destacado: false,
-    fallback: "👁️"
+    fallback: "👁️",
+    image: "https://i.postimg.cc/3wktprJq/RIMEL-GX1096.jpg"
   },
 
   // --- CATEGORÍA: MAQUILLAJE -> SUB: SOMBRAS ---
@@ -195,7 +208,8 @@ const PRODUCTOS_DATA = [
     subcategoria: "SOMBRAS", 
     descripcion: "Hermosa selección de 9 tonos entre mate y satinados de alta pigmentación en gama rosa y nude, ideal para looks coquette.",
     destacado: true,
-    fallback: "🎨"
+    fallback: "🎨",
+    image: ""
   },
 
   // --- CATEGORÍA: MAQUILLAJE -> SUB: RUBOR ---
@@ -209,7 +223,8 @@ const PRODUCTOS_DATA = [
     subcategoria: "RUBOR", 
     descripcion: "Rubor compacto Kakashow de acabado suave y difuminado de ensueño. Aporta un tono rosado saludable a tus mejillas.",
     destacado: true,
-    fallback: "🌸"
+    fallback: "🌸",
+    image: "https://i.postimg.cc/zfyxWDGZ/RUBOR-199-1.jpg"
   },
   { 
     id: "rubor-gege-bear", 
@@ -221,7 +236,8 @@ const PRODUCTOS_DATA = [
     subcategoria: "RUBOR", 
     descripcion: "Rubor en polvo sedoso Gege Bear de larga duración. Alta adherencia con acabado mate aterciopelado.",
     destacado: false,
-    fallback: "💖"
+    fallback: "💖",
+    image: "https://i.postimg.cc/3wktprJC/0836eaa2-eba6-465f-97e7-367a85ee5ccd-64a3f46bcac7317abe17373351491703-320-0.webp"
   },
   { 
     id: "rubor-jelly-gege-bear", 
@@ -233,13 +249,14 @@ const PRODUCTOS_DATA = [
     subcategoria: "RUBOR", 
     descripcion: "Rubor con textura jelly ultra divertida y refrescante. Brinda un color translúcido y húmedo de aspecto muy natural.",
     destacado: false,
-    fallback: "✨"
+    fallback: "✨",
+    image: "https://i.postimg.cc/3xSLd07n/0af5263a-bf94-4243-ad72-8d7d3a210391-9ba3ab9c7d47ef169617302651732478-320-0.webp"
   },
 
   // --- CATEGORÍA: UÑAS PRESS ON ---
   { 
     id: "unas-press-on-coquette", 
-    nombre: "Uñas Press On Coquette Style", 
+    nombre: "Uñas Press On the Gazette", 
     precio: 4500, 
     stock: 15, 
     sku: "DOJA-UN-001", 
@@ -247,23 +264,25 @@ const PRODUCTOS_DATA = [
     subcategoria: "UÑAS PRESS ON", 
     descripcion: "Uñas postizas reutilizables decoradas al estilo Coquette con pequeños moños y perlas en relieve rosa. Incluye pegamento.",
     destacado: true,
-    fallback: "🎀"
+    fallback: "🎀",
+    image: "https://i.postimg.cc/43jB1CYJ/Whats-App-Image-2026-04-27-at-7-25-42-PM-(1).jpg"
   },
   { 
-    id: "unas-press-on-sanrio", 
-    nombre: "Uñas Press On Sanrio Hello Kitty", 
+    id: "unas-press-on-Naruto", 
+    nombre: "Uñas Press On Naruto Gaara", 
     precio: 4500, 
     stock: 18, 
     sku: "DOJA-UN-002", 
     categoria: "UÑAS PRESS ON", 
     subcategoria: "UÑAS PRESS ON", 
-    descripcion: "Set de uñas postizas press on inspiradas en la estética kawaii de Hello Kitty y sus amigos. Diseños premium en relieve.",
+    descripcion: "Set de uñas postizas press on inspiradas en Gaara de Naruto. Diseños premium en relieve.",
     destacado: true,
-    fallback: "🐱"
+    fallback: "🐱",
+    image: "https://i.postimg.cc/ZqWw3Y5S/Whats-App-Image-2026-04-27-at-7-25-36-PM-(1).jpg"
   },
   { 
-    id: "unas-press-on-anime-glam", 
-    nombre: "Uñas Press On Anime Glam Edition", 
+    id: "unas-press-on-Helsing", 
+    nombre: "Uñas Press On Anime Helsing Edition", 
     precio: 4500, 
     stock: 12, 
     sku: "DOJA-UN-003", 
@@ -271,21 +290,48 @@ const PRODUCTOS_DATA = [
     subcategoria: "UÑAS PRESS ON", 
     descripcion: "Diseños inspirados en personajes de anime con detalles holográficos y relieves 3D. Lucen increíbles y a la moda.",
     destacado: false,
-    fallback: "💅"
+    fallback: "💅",
+    image: "https://i.postimg.cc/k52T8Mgq/Whats-App-Image-2026-04-27-at-7-25-36-PM-(2).jpg"
   },
   { 
-    id: "unas-press-on-basic-pastels", 
-    nombre: "Uñas Press On Basic Pastels", 
+    id: "unas-press-Naruto", 
+    nombre: "Uñas Press On Orochimaru", 
     precio: 3800, 
     stock: 20, 
     sku: "DOJA-UN-004", 
     categoria: "UÑAS PRESS ON", 
     subcategoria: "UÑAS PRESS ON", 
-    descripcion: "Uñas press on en colores pastel lisos y degradados sencillos. Ideales para un estilo diario fino y prolijo.",
+    descripcion: "Set de uñas postizas press on inspiradas en Orochimaru de Naruto. Diseños premium en relieve.",
     destacado: false,
-    fallback: "💅"
+    fallback: "💅",
+    image: "https://i.postimg.cc/xdX6Hj10/Whats-App-Image-2026-04-27-at-7-25-36-PM.jpg"
   },
-
+{ 
+    id: "unas-press-Elfen Lied", 
+    nombre: "Uñas Press On Elfen Lied", 
+    precio: 3800, 
+    stock: 20, 
+    sku: "DOJA-UN-004", 
+    categoria: "UÑAS PRESS ON", 
+    subcategoria: "UÑAS PRESS ON", 
+    descripcion: "Set de uñas postizas press on inspiradas en Elfen Lied. Diseños premium en relieve.",
+    destacado: false,
+    fallback: "💅",
+    image: "https://i.postimg.cc/1zbJKx81/Whats-App-Image-2026-04-27-at-7-25-37-PM.jpg"
+  },
+  { 
+    id: "unas-press-Kuroshitsuji", 
+    nombre: "Uñas Press On Kuroshitsuji", 
+    precio: 3800, 
+    stock: 20, 
+    sku: "DOJA-UN-004", 
+    categoria: "UÑAS PRESS ON", 
+    subcategoria: "UÑAS PRESS ON", 
+    descripcion: "Set de uñas postizas press on inspiradas en Kuroshitsuji. Diseños premium en relieve.",
+    destacado: false,
+    fallback: "💅",
+    image: "https://i.postimg.cc/8C7ZWkzk/Whats-App-Image-2026-04-27-at-7-25-36-PM-(3).jpg"
+  },
   // --- CATEGORÍA: ACCESORIOS (LLAVEROS) ---
   { 
     id: "llavero-tanjiro", 
