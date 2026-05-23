@@ -662,7 +662,7 @@ function App() {
                       `💰 TOTAL: $${nuevo.total.toLocaleString('es-AR')}\n\n` +
                       `Adjunto comprobante de transferencia a continuación.`;
 
-    window.open(`https://wa.me/5491100000000?text=${encodeURIComponent(mensajeWA)}`, '_blank');
+    window.open(`https://wa.me/5493855007974?text=${encodeURIComponent(mensajeWA)}`, '_blank');
   };
 
   const subcategoriasDisponibles = useMemo(() => {
